@@ -21,7 +21,7 @@ str_replace($needle ,$replace , $haystack)
 
 
 ПРОМЕНЛИВИ:
-
+   
 създаване : 
 $x=2;
 $y=3;
@@ -370,6 +370,172 @@ RIGHT (OUTER) JOIN: Върнете всички записи от дясната
 FULL (OUTER) JOINЕ: Върнете всички записи, когато има съответствие в лявата или дясната таблица
 Ключовата дума FULL OUTER JOIN връща всички записи, когато е налице съвпадение в записите за таблиците вляво (table1) или дясно (table2).
 
+
+
+
+
+
+
+
+The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web.
+This guide will introduce the DOM, look at how the DOM represents an HTML document in memory and how to use APIs to create web content and applications.
+
+
+
+
+REACT:
+React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Perhaps you only want to
+add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.
+
+Create a new react app:
+npx create-react-app my-app
+cd my-app
+npm start 
+
+
+npm start or yarn start
+runs the app in development mode.
+
+npm test or yarn test
+runs the test watcher in an interactive mode.
+
+npm run build or yarn build
+builds the app for production in the build folder.
+
+
+
+
+Add a React component to an existing HTML page: z
+
+<!-- ... existing HTML ... -->
+
+<div id="like_button_container"></div>
+
+<!-- ... existing HTML ... -->
+
+add 3 script tags in the html file right before the closing </body> tag.
+<!-- ... other HTML ... -->
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="like_button.js"></script>
+
+</body>
+
+The first two tags load react. The third one will load your component code.
+
+then we create anothe file called like_button.js next to our HTML file.
+'use strict';
+
+const e = React.createElement;
+
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
+  }
+
+  render() {
+    if (this.state.liked) {
+      return 'You liked this.';
+    }
+
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'Like'
+    );
+  }
+}
+
+this creates component called Like Button
+and then at the bottom of the file we add 
+
+const domContainer = document.querySelector('#like_button_container');
+ReactDOM.render(e(LikeButton), domContainer);
+
+this code finds the <div> we added and then display the "Like"button React component inside of it.
+Done!
+
+
+======
+
+Introducing JSX
+
+const element = <h1>Hello, world!</h1>;
+jsx is a syntax extension to JScript.
+we use it with react to describe what the UI should look like.
+
+Embedding expressions in JSX : 
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+first we declared the variable "name" and then we use it in the jsx by wrapping it like that { name } 
+we can put any valid JS expression inside the {} in the jsx for example 2+2  , formatName(user) etc.
+
+
+
+we embed the result of calling a javascript funtion into a <h1> tag. 
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+
+const element = (
+  <h1>
+    Hello, {formatName(user)}!
+  </h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+
+
+
+we  can use JSX inside of IF statements and FOR loops, assign it to variables, accept it as arguments, and return it from functions:
+
+function getGreeting(user) {
+  if (user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>Hello, Stranger.</h1>;
+}
+
+
+
+
+Rendering Elements
+an element describes what u want to see on the screen : 
+const element = <h1>Hello, world</h1>;
+
+
+Function and Class Components
+Components let you split the UI into independent pieces and think about each piece in isolation.
+the simplest way to define a component is to write a JavaScript function:
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+
+State and Lifecycle
+ 
 
 
 
