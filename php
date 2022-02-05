@@ -403,6 +403,16 @@ npm run build or yarn build
 builds the app for production in the build folder.
 
 
+PROPS VS STATE
+STATE is handled in the component and can be updated inside the component
+PROPS is handled outside the component and must be updated outside of the component
+
+if u change the STATE inside out application its going to rerender the section of the app.
+u cant change the PROPS inside of the applicaiton.
+
+if i need to chance something in the application i have to use STATE.PROPS is good if i need to display something without hard codding it.
+
+
 
 
 Add a React component to an existing HTML page: z
@@ -534,8 +544,6 @@ function Welcome(props) {
 }
 
 
-State and Lifecycle
- 
 
 
 
