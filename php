@@ -549,6 +549,184 @@ function Welcome(props) {
 
 
 
+VAR LET DECLARATION : 
+var is function scoped  , can be redeclared. 
+let is block scoped : 
+if { let b =3 
+};   
+else {let b=3 
+};
+thats block declared - between { }
+let cannot be redeclared in the same block.
+
+
+const and let 
+if we are going to reassign we use LET
+
+if we arent going to reassing we use CONST 
+
+
+arrows : 
+
+const Arrowthing = (m,bonus) => (10*m+bonus);
+
+console.log(typeof Arrowthing(5,50));
+result : 100
+
+console.log(typeof Arrowthing);
+result : Function
+
+
+
+lexical THIS :
+function scope
+example : 
+
+
+
+var example {
+id: 5
+greet: function (){console.log(this.id);
+  }
+};
+employee.greet();
+result : 5  this works just fine BUT : 
+
+var example = {
+id: 5
+greet: function (){
+setTimeout (function() {console.log(this.id)} , 1000);
+  }
+};
+employee.greet();
+
+result undefined.
+
+thats because we use this in different function , in order to work we have to define this like so : 
+var example = {
+id: 5
+greet: function (){
+var that = this;
+setTimeout (function() {console.log(that.id)} , 1000);
+  }
+};
+employee.greet();
+
+result : 5 
+and its working perfectly fine like that 
+
+BUT BETTER WITH ARROWS : 
+var example = {
+id: 5
+greet: function (){
+setTimeout (() =>  {console.log(this.id)} , 1000);
+  }
+};
+employee.greet();
+result 5
+less code less mistakes!!
+
+
+
+destructuring arrays
+let employee = ["Mark" , "Georgiev" , "male"] ; 
+let [fname , lname , gender ] = employee ;
+console.log(fname);
+console.log(lname);
+console.log(gender);
+
+results : 
+Mark
+Georgiev
+Male
+if we dont need all elements : 
+let employee = ["Mark" , "Georgiev" , "male"] ; 
+let [, , gender ] = employee ;
+console.log(gender);
+result
+Male
+
+or 
+
+let employee = ["Mark" , "Georgiev" , "male"] ; 
+let [fname , ...elements ] = employee ;
+console.log(fname);
+console.log(elements);
+
+results : 
+Mark
+["Georgiev" , "male"]
+
+
+ако нямаме въведена стойност за някой от ключовете можем да сложим default : 
+let employee = ["Mark" , "Georgiev"] ; 
+let [fname , lname , gender = "male"] = employee ;
+console.log(fname);
+console.log(lname);
+console.log(gender);
+
+results : 
+Mark
+Georgiev
+Male
+
+
+Destructing objects:
+
+let employee = {
+fname : "Mark",
+lname : "Georgiev",
+gender: "male"
+}
+
+let {fname: f, lname: l , gender: g} = employee
+// fname:f = allias , po tozi nachin veche izpolzvame F vmesto imeto na promenlivata , за по-кратко.
+
+console.log(f);
+console.log(l);
+console.log(g);
+
+
+
+FOR OF LOOP
+let colors = ["green","yellow","red"];
+
+for(let color of colors){
+console.log(color);
+};
+console.log(color);
+result : 
+Green
+yellow
+red
+
+let letters = "ABC";
+for(let letter for letters){
+console.log(letter);
+}
+result : 
+A
+B
+C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
