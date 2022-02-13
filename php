@@ -547,7 +547,9 @@ function Welcome(props) {
 
 
 ES6 and Typescripts : 
+ES6 stands for ECMAScript 6.
 
+ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
 
 VAR LET DECLARATION : 
 var is function scoped  , can be redeclared. 
@@ -570,7 +572,7 @@ arrows :
 
 const Arrowthing = (m,bonus) => (10*m+bonus);
 
-console.log(typeof Arrowthing(5,50));
+console.log(Arrowthing(5,50));
 result : 100
 
 console.log(typeof Arrowthing);
@@ -741,8 +743,27 @@ p.greetPerson();    =    Hello Chandler
 
 
 
+props vs state 
+
+props;
+gets passed to component
+function parameters
+cannot be changed by the children
+functional components - we acces with "props"
+class components we access with "this.props"
+
+state:
+managed within the component
+variables declared in the function body
+state can be changed 
+function components we access with useState hook
+class components we access with this.state
 
 
+
+setState
+always use setState , never modify state directly
+when u have to update state based on the previous state value pass in a function as a argument instead of the regular object
 
 
 
