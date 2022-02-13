@@ -546,7 +546,7 @@ function Welcome(props) {
 
 
 
-
+ES6 and Typescripts : 
 
 
 VAR LET DECLARATION : 
@@ -710,9 +710,30 @@ B
 C
 
 
+defining a class : 
+
+class Person{  - class
+greet{}()    - method
+}
+let p = new Person();   - constructor
 
 
+class Person {
+constructor(name){
+ this.name=name;
+ console.log(this.name + " Constructor");
+ }
+ static staticMethod(){
+ console.log("Static Method");
+ }
+ greetPerson(){
+ console.log("Hello " + this.name);
+ }
+}
 
+Person.staticmethod();     =     Static Method
+let p = new Person ("Chandler");     =     Chandler Constructor
+p.greetPerson();    =    Hello Chandler
 
 
 
