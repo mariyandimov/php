@@ -410,7 +410,7 @@ PROPS is handled outside the component and must be updated outside of the compon
 if u change the STATE inside out application its going to rerender the section of the app.
 u cant change the PROPS inside of the applicaiton.
 
-if i need to chance something in the application i have to use STATE.PROPS is good if i need to display something without hard codding it.
+if i need to change something in the application i have to use STATE.PROPS is good if i need to display something without hard codding it.
 
 
 
@@ -475,6 +475,8 @@ Done!
 ======
 
 Introducing JSX
+JAVA SCRIPT XML
+
 
 const element = <h1>Hello, world!</h1>;
 jsx is a syntax extension to JScript.
@@ -759,6 +761,10 @@ state can be changed
 function components we access with useState hook
 class components we access with this.state
 
+
+
+functional components : 
+a java script function that accepts input of properties and returns HTML that describes the UI.
 
 
 setState
